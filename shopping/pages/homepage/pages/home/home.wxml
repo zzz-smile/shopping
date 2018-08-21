@@ -1,0 +1,10 @@
+<!--pages/homepage/pages/home/home.wxml-->
+<view class='container'>
+  <view>
+    <block wx:for="{{imgs}}" wx:key="item">
+    <swiper indicator-dots="true" autoplay="true" duration="1000" interval="3500" >
+        <image src='{{item.picurl}}'></image>
+    </swiper>
+    </block>
+  </view>
+</view>

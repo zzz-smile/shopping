@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/homepage/pages/me/me",
+    "pages/homepage/pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/homepage/pages/shopping/shopping"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Zzz卖店",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/homepage/pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/homepage/resources/store1.png",
+        "selectedIconPath": "pages/homepage/resources/store2.png"
+      },
+      {
+        "pagePath": "pages/homepage/pages/shopping/shopping",
+        "text": "购物车",
+        "iconPath": "pages/homepage/resources/shopping-cart1.png",
+        "selectedIconPath": "pages/homepage/resources/shopping-cart2.png"
+      },
+      {
+        "pagePath": "pages/homepage/pages/me/me",
+        "text": "我",
+        "iconPath": "pages/homepage/resources/buyer1.png",
+        "selectedIconPath": "pages/homepage/resources/buyer2.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/submy",
+      "pages": [
+        "/pages/my/my_order"
+      ]
+    }
+  ],
+  "debug": "true"
+}
