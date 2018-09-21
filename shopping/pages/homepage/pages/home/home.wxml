@@ -1,10 +1,85 @@
 <!--pages/homepage/pages/home/home.wxml-->
+<import src="/pages/homepage/pages/common/tabView.wxml" />
 <view class='container'>
   <view>
+    <swiper indicator-dots="true" autoplay="true" duration="1000" interval="2500" indicator-active-color="#00CCFF" class='swiper_img'>
     <block wx:for="{{imgs}}" wx:key="item">
-    <swiper indicator-dots="true" autoplay="true" duration="1000" interval="3500" >
-        <image src='{{item.picurl}}'></image>
+        <swiper-item >
+          <image src='{{item.imgUrl}}' mode='widthFix' style="width: {{imageWidth}}px;"></image>
+        </swiper-item>
+    </block>
     </swiper>
+  </view>
+
+  <!--分类 -->
+  <view class='menu_view'>
+    <block wx:for="{{menus}}" wx:key="item">
+      <view class='menu_item'  data-id='{{item.id}}' bindtap="tabSelectd"  data-style='{{item.style}}' 
+      data-subStyle='{{item.substyle}}' >
+        <image src='{{item.img_url}}' class='image'></image>
+        <view class="{{tabIndex==item.id? 'tab-active':''}}"><text>{{item.text}}</text></view>
+      </view>
     </block>
   </view>
+
+
+  <view class='tabView'>
+    <view hidden='{{tabIndex!==1}}'>
+    <text>zzz</text>
+     </view>
+     <view hidden='{{tabIndex!==2}}'>
+    <text>xxx</text>
+     </view>
+     <view hidden='{{tabIndex!==3}}'>
+    <text>ccc</text>
+     </view>
+     <view hidden='{{tabIndex!==4}}'>
+    <text>vvv</text>
+     </view>
+  </view>
+  
+
+  <!-- <view class='tabView'>
+    <block wx:for="{{menus}}" wx:key="item">
+      <view class="tab-hide {{tabIndex==item.id? 'tab-show':''}}">
+        <block wx:if="{{tabIndex==item.id}}">
+          <template is="tabView" data="{{zzz:'liquors',products:liquors}}" />
+        </block>
+        <block wx:elif="{{tabIndex==item.id}}">
+          <template is="tabView" data="{{zzz:'wines',products:wines}}" />
+        </block>
+        <block wx:elif="{{tabIndex==item.id}}">
+          <template is="tabView" data="{{zzz:'fishs',products:fishs}}" />
+        </block>
+        <block wx:elif="{{tabIndex==item.id}}">
+          <template is="tabView" data="{{zzz:'dried_foods',products:dried_foods}}" />
+        </block>
+        <block wx:else>
+           <template is="tabView" data="{{zzz:'sss',products:hotProducts}}" /> 
+        </block>
+      </view>
+    </block>
+  </view> -->
+
+  <!--热卖 -->
+  <!-- <view>
+    <view class="text">
+        <view class="line_flag"></view>
+        <text>商品</text>
+    </view>
+
+    <view class="product_box">
+        <view class="product_list">
+            <block wx:for="{{hotProducts}}" wx:key="item">
+                <view class="product_item">
+                    <navigator url="../product/index?productSku={{item.productSku}}">
+                        <image src="{{item.productImg}}"/>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+    </view>
+  </view> -->
+
+
 </view>

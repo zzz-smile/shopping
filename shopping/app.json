@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/homepage/pages/me/me",
     "pages/homepage/pages/home/home",
+    "pages/homepage/pages/me/me",
     "pages/index/index",
     "pages/logs/logs",
     "pages/homepage/pages/shopping/shopping"
@@ -38,7 +38,7 @@
     {
       "root": "pages/submy",
       "pages": [
-        "/pages/my/my_order"
+        "pages/my/my_order"
       ]
     }
   ],

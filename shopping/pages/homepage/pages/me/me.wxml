@@ -1,12 +1,21 @@
 <!--pages/homepage/pages/me/me.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
+<!-- <view class="container">
+  <view  bindtap="getUserInfo" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-</view>
-
-<view class="info_list">
+</view>  -->
+ <view wx:if="{{!hasUserInfo && canIUse}}" >
+ <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"  class="login"> 登录 </button>
+ </view>
+ <view wx:else>
+    <view class="container">
+        <view  bindtap="getUserInfo" class="userinfo">
+              <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+              <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+    </view>
+    <view class="info_list">
     <block wx:for="{{userListInfo}}" wx:key="item">
         <navigator url='{{item.url}}' hover-class="navigator-hover">
         <view class="weui_cell">
@@ -20,6 +29,9 @@
         </navigator>
     </block>
   </view>
+ </view>
+
+
 
 <!-- <view class="container">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

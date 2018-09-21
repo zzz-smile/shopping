@@ -1,0 +1,17 @@
+<template name="tabView">
+  <text>{{zzz}}</text>
+  <view class="product_box">
+        <view class="product_list">
+            <block wx:for="{{products}}" wx:key="item">
+                <view class="product_item">
+                    <navigator url="../product/index?productSku={{item.productSku}}">
+                        <image src="{{item.productImg}}"/>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+<!-- <template name="A">
+  <text> A template </text>
+</template> -->

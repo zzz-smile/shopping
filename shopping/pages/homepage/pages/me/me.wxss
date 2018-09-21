@@ -8,6 +8,7 @@
   padding: 50rpx 0;
   align-items: center;
   background: #00CCFF;
+  border: 0px;
 }
 .userinfo-avatar {
   width: 128rpx;
@@ -17,6 +18,15 @@
 }
 .userinfo-nickname {
   color: #333;
+}
+
+.login{
+  display: flex;
+  /* padding: 50rpx 0; */
+  margin-top: 60%;
+  justify-content: center;
+  align-items:center;
+  background: #00CCFF;
 }
 
 
